@@ -1,0 +1,231 @@
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8"/>
+        <title>Research Map</title>
+        
+        <style>
+      a {
+        color: #ebb400;
+      }
+    </style>
+
+        <!--Uber Font-->
+        <link rel="stylesheet" href="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css">
+
+        <!--MapBox css-->
+        <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
+
+        
+
+        <!-- Load React/Redux -->
+        <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" crossorigin></script>
+        <script src="https://unpkg.com/react-redux@7.1.3/dist/react-redux.min.js" crossorigin></script>
+        <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" crossorigin></script>
+
+        <!-- Load Kepler.gl -->
+        <script src="https://unpkg.com/kepler.gl@2.5.5/umd/keplergl.min.js" crossorigin></script>
+
+        <style type="text/css">
+          body {margin: 0; padding: 0; overflow: hidden;}
+        </style>
+
+        <!--MapBox token-->
+        <script>
+          /**
+           * Provide your MapBox Token
+           **/
+          const MAPBOX_TOKEN = 'pk.eyJ1IjoiY2xudW5leiIsImEiOiJja2Jhc2FyNWIwajVtMm9vM3dkdHZub3F0In0.2YXOgKzjUnpGlCXM7b7icg';
+          const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl. Edit this file and fill out MAPBOX_TOKEN with your access key';
+        </script>
+
+        <!-- GA: Delete this as you wish, However to pat ourselves on the back, we only track anonymous pageview to understand how many people are using kepler.gl. -->
+        <script>
+          
+        </script>
+      </head>
+      <body>
+        <!-- We will put our React component inside this div. -->
+        <div id="app">
+          <!-- Kepler.gl map will be placed here-->
+        </div>
+
+        <!-- Load our React component. -->
+        <script>
+          /* Validate Mapbox Token */
+          if ((MAPBOX_TOKEN || '') === '' || MAPBOX_TOKEN === 'PROVIDE_MAPBOX_TOKEN') {
+            alert(WARNING_MESSAGE);
+          }
+
+          /** STORE **/
+          const reducers = (function createReducers(redux, keplerGl) {
+            return redux.combineReducers({
+              // mount keplerGl reducer
+              keplerGl: keplerGl.keplerGlReducer.initialState({
+                uiState: {
+                  readOnly: true,
+                  currentModal: null
+                }
+              })
+            });
+          }(Redux, KeplerGl));
+
+          const middleWares = (function createMiddlewares(keplerGl) {
+            return keplerGl.enhanceReduxMiddleware([
+              // Add other middlewares here
+            ]);
+          }(KeplerGl));
+
+          const enhancers = (function craeteEnhancers(redux, middles) {
+            return redux.applyMiddleware(...middles);
+          }(Redux, middleWares));
+
+          const store = (function createStore(redux, enhancers) {
+            const initialState = {};
+
+            return redux.createStore(
+              reducers,
+              initialState,
+              redux.compose(enhancers)
+            );
+          }(Redux, enhancers));
+          /** END STORE **/
+
+          /** COMPONENTS **/
+          var KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
+            var LogoSvg = function LogoSvg() {
+              return react.createElement(
+                "div",
+                { className: "logo-container", style: {position: 'fixed', zIndex: 10000, padding: '4px'} },
+                  react.createElement(
+                    "svg",
+                    {
+                      className: "",
+                      width: "1px",
+                      height: "1px",
+                      viewBox: "0 0 124 24"
+                    },
+                    react.createElement(
+                      "g",
+                      { transform: "translate(13.500000, 13.500000) rotate(45.000000) translate(-13.500000, -13.500000) translate(4.000000, 4.000000)" },
+                      react.createElement("rect", { x: "0", y: "6", transform: "matrix(2.535181e-06 1 -1 2.535181e-06 18.1107 6.0369)", fill: "#535C6C", width: "12.1", height: "12.1" }),
+                      react.createElement("rect", { x: "6", y: "0", transform: "matrix(2.535182e-06 1 -1 2.535182e-06 18.1107 -6.0369)", fill:"#1FBAD6", width: "12.1", height: "12.1" })
+                    ),
+                    react.createElement(
+                      "g",
+                      {},
+                      )
+                  )
+                );
+              };
+
+            return function App() {
+              var rootElm = react.useRef(null);
+              var _useState = react.useState({
+                width: window.innerWidth,
+                height: window.innerHeight
+              });
+              var windowDimension = _useState[0];
+              var setDimension = _useState[1];
+              react.useEffect(function sideEffect(){
+                function handleResize() {
+                  setDimension({width: window.innerWidth, height: window.innerHeight});
+                };
+                window.addEventListener('resize', handleResize);
+                return function() {window.removeEventListener('resize', handleResize);};
+              }, []);
+              return react.createElement(
+                'div',
+                {style: {position: 'absolute', left: 0, width: '100vw', height: '100vh'}},
+                LogoSvg(),
+                react.createElement(keplerGl.KeplerGl, {
+                  mapboxApiAccessToken: mapboxToken,
+                  id: "map",
+                  width: windowDimension.width,
+                  height: windowDimension.height
+                })
+              )
+            }
+          }(React, KeplerGl, MAPBOX_TOKEN));
+
+          const app = (function createReactReduxProvider(react, reactRedux, KeplerElement) {
+            return react.createElement(
+              reactRedux.Provider,
+              {store},
+              react.createElement(KeplerElement, null)
+            )
+          }(React, ReactRedux, KeplerElement));
+          /** END COMPONENTS **/
+
+          /** Render **/
+          (function render(react, reactDOM, app) {
+            reactDOM.render(app, document.getElementById('app'));
+          }(React, ReactDOM, app));
+        </script>
+        <!-- The next script will show how to interact directly with Kepler map store -->
+        <script>
+          /**
+           * Customize map.
+           * In the following section you can use the store object to dispatch Kepler.gl actions
+           * to add new data and customize behavior
+           */
+          (function customize(keplerGl, store) {
+            const datasets = 
+[
+{"version":"v1","data":{"id":"7zs7en8wi","label":"site.map.csv","color":[143,47,191],"allData":
+[
+["Mpala Research Centre","Research Site",36.902058,0.290919,"https://mpala.org/"],
+["Barro Colorado Island Smithsonian Tropical Research Institute","Research Site",-79.849746,9.156279,"https://stri.si.edu/visit/barro-colorado"],
+["Max Planck Institute of Animal Behavior","Research Site",8.997299,47.767888,"https://www.ab.mpg.de/"],
+["Centre for the Advanced Study of Collective Behaviour","Research Site",9.187759,47.688097,"https://www.exc.uni-konstanz.de/collective-behaviour/about-us/overview/"],
+["Duke University","Research Site",-78.941653,36.001878,"https://duke.edu/"],
+["Kompetenzzentrum Obstbau-Bodensee","Research Site",9.555808, 47.766871, "https://www.kob-bavendorf.de/unser-haus.html"],
+["Parque Natural Metropolitano","Research Site",-79.546271, 8.993564, "https://stri.si.edu/facility/canopy-access-cranes"],
+["Coweeta Hydrologic Laboratory","Research Site",-83.431617,35.059072,"https://srs.fs.usda.gov/coweeta/"],
+["University of California, Davis","Research Site",-121.754081,38.538402,"https://www.ucdavis.edu/"],
+["Long distance seed dispersal by forest elephants","Publication", 13.579770,-0.186992,"https://www.frontiersin.org/articles/10.3389/fevo.2021.789264/full"],
+["Distinct Community-Wide Responses to Forecasted Climate Change in Afrotropical Forests","Publication", 14.041145,-2.699302,"https://www.frontiersin.org/articles/10.3389/fevo.2021.742626/full"],
+["Ecological and social pressures interfere with homeostatic sleep regulation in the wild","Publication",36.920400,0.819825, "https://elifesciences.org/articles/73695"],
+["Is there tree senescence? The fecundity evidence","Publication",-98.579486,39.828343,"https://www.pnas.org/content/pnas/118/34/e2106130118.full.pdf"],
+["Ecological factors influence balancing selection on leaf chemical profiles of a wildflower","Publication",-106.987241,38.958029,"https://www.nature.com/articles/s41559-021-01486-0"],
+["Continent-wide tree fecundity driven by indirect climate effects","Publication",-79.005245,36.020447,"https://www.nature.com/articles/s41467-020-20836-3.pdf"],
+["Recovery of dung beetle biodiversity and traits in a regenerating rainforest: a case studyfrom Costa Rica's Osa Peninsula","Publication",-83.544037,8.582277,"https://onlinelibrary.wiley.com/doi/full/10.1111/icad.12470?af=R"],
+["Old growth Afrotropical forests critical for maintaining forest carbon","Publication",9.287216,-0.513734,"https://onlinelibrary.wiley.com/doi/abs/10.1111/geb.13150"],
+["Stronger together: comparing and integrating camera trap, visual, and dung survey data forecological inference in tropical forest mammal communities","Publication",10.550011,-3.176405,"https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2965"],
+["Estimation Of Gut Passage Times Of Wild, Free Roaming Forest Elephants","Publication",13.213807,2.232377,"https://bioone.org/journals/Wildlife-Biology/volume-2019/issue-1/wlb.00543/Estimation-of-gut-passage-time-of-wild-free-roaming-forest/10.2981/wlb.00543.full"],
+["Landscape-level validation of allometric relationships for carbon stock estimation revealsbias driven by soil type","Publication",11.59083,-0.562711,"https://esajournals.onlinelibrary.wiley.com/doi/10.1002/eap.1987"],
+["Food webs built on unreliable foundations: Masting and the movement, demographic storage,and diet breadth of consumers","Publication",-72.18905,42.531083,"http://www.chasenunez.com/docs/EM2019maintext.pdf"],
+["Low-Intensity Logging and Hunting have Long-Term Effects on Seed Dispersal but not Fecundity in Afrotropical Forests","Publication",16.638089,2.84243,"http://www.chasenunez.com/docs/Nunez.et.al.aobp.2018.pdf"],
+["Ecological consequences of forest elephant declines for Afrotropical forests","Publication",9.505174,0.628488,"http://www.chasenunez.com/docs/Poulsen_et_al-2018-Conservation_Biology.pdf"],
+["Offspring of primiparous mothers do not experience greater mortality or poorer growth:Revisiting the conventional wisdom with archival records of Rhesus Macaques","Publication",-121.817015,38.54183,"http://www.chasenunez.com/docs/Nunez_et_al-2015-American_Journal_of_Primatology.pdf"],
+["Life in 2.5 D: animal movement in the trees","Publication",9.1,47.6,"https://www.biorxiv.org/content/10.1101/823203v1"],
+["Disturbance Sensitivity Shapes Patterns of Tree Species Distribution in Afrotropical Lowland Rainforests More Than Climate or Soil","Publication",14.016119,-2.298675,"https://www.biorxiv.org/content/10.1101/823203v1"]
+],
+"fields":
+[
+{"name":"Name","type":"string","format":"","analyzerType":"STRING"},{"name":"Type","type":"string","format":"","analyzerType":"STRING"},{"name":"Longitude","type":"real","format":"","analyzerType":"FLOAT"},{"name":"Latitude","type":"real","format":"","analyzerType":"FLOAT"},{"name":"link","type":"string","format":"","analyzerType":"STRING"}
+]}}
+];
+
+            const config = {"version":"v1","config":{"visState":{"filters":[],"layers":[{"id":"nrta4ex","type":"point","config":{"dataId":"7zs7en8wi","label":"Point","color":[255,203,153],"highlightColor":"#8b008b","columns":{"lat":"Latitude","lng":"Longitude","altitude":null},"isVisible":true,"visConfig":{"radius":19.5,"fixedRadius":false,"opacity":0.3,"outline":true,"thickness":1.3,"strokeColor":[166,165,165],"colorRange":{"name":"Custom Palette","type":"custom","category":"Custom","colors":["#353535","#ebb400"]},"strokeColorRange":{"name":"Global Warming","type":"sequential","category":"Uber","colors":["#5A1846","#900C3F","#C70039","#E3611C","#F1920E","#FFC300"]},"radiusRange":[0,50],"filled":true},"hidden":false,"textLabel":[{"field":null,"color":[255,255,255],"size":18,"offset":[0,0],"anchor":"start","alignment":"center"}]},"visualChannels":{"colorField":{"name":"Type","type":"string"},"colorScale":"ordinal","strokeColorField":null,"strokeColorScale":"quantile","sizeField":null,"sizeScale":"linear"}}],"interactionConfig":{"tooltip":{"fieldsToShow":{"7zs7en8wi":[{"name":"Name","format":null},{"name":"Type","format":null},{"name":"Longitude","format":null},{"name":"Latitude","format":null},{"name":"link","format":null}]},"compareMode":false,"compareType":"absolute","enabled":true},"brush":{"size":0.5,"enabled":false},"geocoder":{"enabled":false},"coordinate":{"enabled":false}},"layerBlending":"normal","splitMaps":[],"animationConfig":{"currentTime":null,"speed":1}},"mapState":{"bearing":0,"dragRotate":false,"latitude":22.2957415,"longitude":-23,"pitch":0,"zoom":1.8,"isSplit":false},"mapStyle":{"styleType":"muted","topLayerGroups":{},"visibleLayerGroups":{"label":false,"road":false,"border":true,"building":false,"water":true,"land":true,"3d building":false},"threeDBuildingColor":[224.4071295378559,224.4071295378559,224.4071295378559],"mapStyles":{}}}};
+
+            const loadedData = keplerGl.KeplerGlSchema.load(
+              datasets,
+              config
+            );
+
+            store.dispatch(keplerGl.addDataToMap({
+              datasets: loadedData.datasets,
+              config: loadedData.config,
+              options: {
+                centerMap: false
+              }
+            }));
+          }(KeplerGl, store))
+        </script>
+      </body>
+    </html>
+  

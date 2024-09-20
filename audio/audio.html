@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Title of the document</title>
+</head>
+
+<body>
+TOP
+<script src="/audiojs/audio.min.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
+AUDIO HERE
+<audio src="/wav/test.mp3" preload="auto" />
+AUDIO HERE
+</body>
+
+</html>

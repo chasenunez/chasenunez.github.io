@@ -1,0 +1,17 @@
+lat	lon	title	icon	iconSize	iconOffset 	description
+35.994034	-78.898621	Is there tree senescence? The fecundity evidence (2021)	redcircle.png	10,10	0,0	<a href="https://www.pnas.org/content/pnas/118/34/e2106130118.full.pdf">PDF</a>	
+38.957052	-106.987231	Ecological factors influence balancing selection on leaf chemical profiles of a wildflower (2021)	redcircle.png	10,10	0,0	<a href="https://www.nature.com/articles/s41559-021-01486-0">PDF</a>
+42.531137	-72.189445	Continent-wide tree fecundity driven by indirect climate effects	redcircle.png	10,10	0,0	<a href="https://www.nature.com/articles/s41467-020-20836-3.pdf">PDF</a>
+8.576144	-83.506942	Recovery of dung beetle biodiversity and traits in a regenerating rainforest: a case study from Costa Rica's Osa Peninsula	redcircle.png	10,10	0,0	<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/icad.12470?af=R">PDF</a>
+-0.2	11.396814	Old growth Afrotropical forests critical for maintaining forest carbon (2020)	redcircle.png	10,10	0,0	<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/geb.13150">PDF</a>
+-0.735938	9.387104	Stronger together: comparing and integrating camera trap, visual, and dung survey data in tropical forest communities (2019)	redcircle.png	10,10	0,0	<a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2965">PDF</a>
+-3.613327	11.058243	Estimation of gut passage time of wild, free roaming forest elephants (2019)	redcircle.png	10,10	0,0	<a href="https://bioone.org/journals/Wildlife-Biology/volume-2019/issue-1/wlb.00543/Estimation-of-gut-passage-time-of-wild-free-roaming-forest/10.2981/wlb.00543.full">PDF</a>
+-0.634797	14.372312	Landscape-level validation of allometric relationships for carbon stock estimation reveals bias driven by soil type (2019)	redcircle.png	10,10	0,0	<a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/eap.1987">PDF</a>
+35.059177	-83.429964	Foodwebs based on unreliable foundations: spatiotemporal masting merged with consumer movement, storage, and diet (2019)	redcircle.png	10,10	0,0	<a href="http://www.chasenunez.com/docs/EM2019maintext.pdf">PDF</a>
+3.437108	18.295631	Low-intensity logging and hunting have long-term effects on seed dispersal but not fecundity in Afrotropical forests (2018)	redcircle.png	10,10	0,0	<a href="http://www.chasenunez.com/docs/Nunez.et.al.aobp.2018.pdf">PDF</a>
+2.033261	12.234691	Ecological consequences of forest elephant declines for Afrotropical forests (2018)	redcircle.png	10,10	0,0	<a href="http://www.chasenunez.com/docs/Poulsen_et_al-2018-Conservation_Biology.pdf">PDF</a>
+38.554863	-121.798372	Offspring of Primiparous Mothers Do Not Experience Greater Mortality or Poorer Growth: Revisiting the Conventional Wisdom with Archival Records of Rhesus Macaques (2015)	redcircle.png	10,10	0,0	<a href="http://www.chasenunez.com/docs/Nunez_et_al-2015-American_Journal_of_Primatology.pdf">PDF</a>
+9.1575080	-79.84905	Barro Colorado Island	target.png	20,20	0,0	<a href="https://stri.si.edu/facility/barro-colorado">website</a>
+47.767686	8.996708	Max Planck Institute of Animal Behavior	target.png	20,20	0,0	<a href="https://www.ab.mpg.de">website</a>
+0.2923168	36.90031	Mpala Research Centre	target.png	20,20	0,0	<a href="https://mpala.org">PDF</a>
+

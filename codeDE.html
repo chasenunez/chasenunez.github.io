@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Chase N&uacute;ñez | Code</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name = "description" content="Packages, functions, and other coding resources" />
+		<meta name="google-site-verification" content="q-_1OMVCsNpxU5P-btt7UpZaR9qBzLcHQufFkDRMaY8" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/target.png">
+	</head>
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F6Y0C89R9E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F6Y0C89R9E');
+</script>
+
+	<body>
+
+		<!-- Wrapper style="width:250px "  -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Chase N&uacute;ñez</strong> PhD</a>
+									<ul class="icons">
+										<li><a href = "indexDE.html"><span class="label">&Uuml;ber</span></a></li>
+										<li><a href = "researchDE.html"><span class="label">Forschung</span></a></li>
+										<li><b><a href = "codeDE.html"><span class="label"><strong><font color = "#dfaf37">Code</font></strong></span></a></b></li>
+										<li><a href = "mediaDE.html"><span class="label">Medien</span></a></li>
+										   <li><p style="font-size:10px;">[ <a href="code.html">EN</a> / <strong><font color="#dfaf37">DE</strong></font> ]</p></li>
+										<!--<li><a href = "teaching.html"><span class="label">Teaching</span></a></li>
+										<li><a href = "outreach.html"><span class="label">Outreach</span></a></li>-->
+									</ul>
+								</header>
+<!-- -->								
+								<section>
+								<div class="row">
+									<div class="4u 12u(medium)">
+										<ul class="image fit"><img src="images/ballistic.gif"/>
+										</ul>
+									</div>
+									<div class="8u 12u(medium)">
+										<h3><i><strong><font color = "#dfaf37">R Paket:</strong></font></i>&nbsp Mast Inference and Forecasting (MASTIF)</h3>
+											<span><strong>MASTIF schätzt probabilistisch die Samenproduktion und -ausbreitung von Bäumen anhand von Samenfallendaten und Baumstandorten.</strong> Das Modell baut auf der reichhaltigen Literatur von Saatgutausbreitungsmodellen auf,
+											die ein bivariates Student's t (2Dt) verwenden, indem es Unsicherheiten in der Saatgutzuordnung berücksichtigt, den Reifestatus für unbekannte Bäume modelliert und die Raum-Zeit-Kovarianzstruktur der 
+											Saatgutproduktion zwischen Bäumen explizit beschreibt. Unsere Publikation, die das Modell und die Theorie dahinter beschreibt, finden Sie <a href="docs/EM2019maintext.pdf">hier</a>, und ergänzendes Material finden Sie <a href="docs/EM2019supplement.pdf">hier</a>. 
+													<div class="row">
+														<div class="8u 12u$(medium)">
+															<br> Installieren Sie <a href="https://github.com/jimclarkatduke/mastif/blob/master/mastif_1.0.tar.gz"><b>hier </b></a>, dann in R folgendes aufrufen:
+																<pre>
+																	<code>
+install.packages('mastif_1.0.tar.gz',repos=NULL, type='source')
+library('mastif')
+
+																	</code>
+																</pre>
+														</div>
+														<div class="4u$ 12u$(medium)">
+															<br>Hilfe und Dokumentation hier:
+																<pre>
+																	<code>
+help('mastif')
+browseVignettes('mastif')
+
+																	</code>
+																</pre>
+														</div>
+															<br> 
+													</div>
+											</span>			
+									</div>	
+								</div>
+								</section>
+<!-- -->								
+								<section>						
+									<div class="row">
+										<div class="4u 12u(medium)">
+											<ul class="image fit"><img src="images/articles/python.jpg"/>
+											</ul>
+										</div>
+										<div class="8u 12u(medium)">
+										<h3><i><strong><font color = "#dfaf37">Python Paket:</strong></font></i>&nbsp geeDataExtract</h3>
+											<span> Das Python-Paket <strong>geeDataExtract </strong>nutzt die Kommandozeile und die riesige Environmental Covariate-Datenbank von Google Earth Engine, um eine Vielzahl von Daten über Raum und Zeit abzurufen. Sie können dieses Paket mit dem folgenden Arbeitsablauf verwenden 
+											(<i>Google Earth Engine Umweltkovariablen für Punkte ohne ArcGIS erhalten</i>) <br> Paket herunterladen <a href="https://github.com/ASchwantes/geedataextract">hier</a>. 
+												<div class="row">
+													<div class="12u 12u$(medium)">
+														<br>Python Paket Zitat:
+															<pre>
+																<code>
+Schwantes, Amanda M., N&uacute;ñez, Chase L. (2019). geeDataExtract. Python package version 0.0.1.
+																</code>
+															</pre>
+													</div>
+											<br> 
+											</span>
+										</div>
+									</div>
+								</section>
+<!-- -->								
+							<section>																		
+								<div class="row">
+									<div class="4u 12u(medium)">
+										<ul class="image fit"><img src="images/gee.gif"/></ul>
+									</div>
+									<div class="8u 12u(medium)">
+										<h3><strong><font color = "#dfaf37">Arbeitsablauf: </strong></font>Google Earth Engine Umweltkovariablen für Punkte ohne ArcGIS erhalten</h3>
+											<span><strong>Google Earth Engine bietet eine enorme offene Ressource für Umweltwissenschaftler</strong>, erfordert aber ein wenig Kodierung und oft zumindest ein paar Stunden in (dem sehr teuren) ArcGIS. Hier ist ein Weg, Arc ganz zu überspringen, der Sie vom Start bis zum Download nur mit R, der Kommandozeile und einem Internet-Browser.</p>
+												<ul class="actions">
+													<li><a href="gee.html" class="button">Arbeitsablauf</a></li>
+												</ul>
+											</span>	
+									</div>
+								</div>
+							</section>
+<!-- -->				
+	
+								<section>
+									<div class="row">
+										<div class="4u 12u(medium)">
+											<ul class="image fit"><img src="images/ants.gif"/></ul>
+										</div>
+										<div class="8u 12u(medium)">
+											<h3><i><strong><font color = "#dfaf37">R Paket:</strong></font></i>&nbsp Generalized Joint Attribute Model (GJAM)</h3>
+											<span><strong>GJAM wurde entwickelt, um einige der Hauptherausforderungen für ökologische Prognosen mit Biodiversitätsdaten zu lösen.</strong> i) Die Daten sind multivariat, ii) sie werden auf verschiedenen Skalen beobachtet und iii) sie sind meist Nullen. Probabilistische Inferenz in GJAM lässt Daten mit disparaten Skalen und massiver Null-Inflation zu. 
+											Das heißt, die Daten werden oft auf unterschiedliche Art und Weise erhoben, und Beobachtungen von Arten sind ein seltenes Ereignis. Durch die Vermeidung der Verzerrung von Skalen, die in verallgemeinerten linearen Modellen implementiert ist, können GJAM-Schätzungen auf der Skala der Beobachtungen interpretiert werden, wobei der Stichprobenaufwand berücksichtigt wird. 
+											Eine Erläuterung der Modellstruktur finden Sie unter <a href = "gjam.html"><b>hier.</b></a> Das Originalmanuskript finden Sie unter <a href = "docs/clarketal2016.pdf"><b>hier.</b></a>
+												<div class="row">
+													<div class="6u 12u$(medium)">
+														<br> installieren Sie es, indem Sie Folgendes in R aufrufen:
+															<pre>
+																<code>
+install.packages('gjam')
+library('gjam')
+
+																</code>
+															</pre>
+													</div>
+													<div class="6u$ 12u$(medium)">
+												<br> Hilfe und Dokumentation hier:
+														<pre>
+															<code>
+help('gjam')
+browseVignettes('gjam')
+
+															</code>
+														</pre>
+													</div>
+											<br> 
+											</span>
+										</div>
+								</div>
+							</section>
+
+<!-- -->
+<section>							
+	<div class="row">
+		<div class="4u 12u(medium)">
+			<ul class="image fit"><img src="images/media/pic04.jpg"/></ul>
+		</div>
+		<div class="8u 12u(medium)">
+		<h3><strong><font color = "#dfaf37">Arbeitsablauf: </strong></font>Passendes Modell der Darmpassagezeit des Wilden Elefanten und der Ausbreitungsdistanzen der Samen</h3>
+				<span><strong>Eine genaue Schätzung der Darmpassagezeit, von der Nahrungsaufnahme bis zur Defäkation, ist für das Verständnis von wirbeltiervermittelten ökologischen Prozessen, wie z. B. der Samenausbreitung, unerlässlich.</strong> Hier ist ein Arbeitsablauf, der ein Modell der Darmpassagezeit anpasst und es räumlich anwendet, um auf die Dichte der Samenausbreitung zu schließen.</p>
+											<ul class="actions">
+														<li><a href="elephant.methods.html" class="button">Arbeitsablauf</a></li>
+													</ul>
+													
+											</span>
+</section>							
+<!-- -->						
+<section>							
+	<div class="row">
+		<div class="4u 12u(medium)">
+			<ul class="image fit"><img src="images/arrowplot.png"/></ul>
+		</div>
+		<div class="8u 12u(medium)">
+		<h3><i><strong><font color = "#dfaf37">Funktion:</strong></font></i> Arrow Plots</h3>
+				<span><strong>Zur Darstellung der geordneten Mittelwertdifferenz zwischen mehreren Gruppen.</strong> In diesem Beispiel stelle ich die Mittelwertdifferenz der Anwesenheitswahrscheinlichkeit für Baumarten im Land Gabun dar.</p>
+											<ul class="actions">
+														<li><a href="https://github.com/chasenunez/arrowplot" class="button special">Herunterladen</a></li>
+														<li><a href="images/arrowplotBig.png" class="button">Beispiel</a></li>
+													</ul>
+													
+											</span>
+</section>
+<!-- -->
+<section>							
+	<div class="row">
+		<div class="4u 12u(medium)">
+			<ul class="image fit"><img src="images/tangle.png"/></ul>
+		</div>
+		<div class="8u 12u(medium)">
+		<h3><strong><font color = "#dfaf37">Funktion: </strong></font>Tangle Plots</h3>
+										
+											<span><strong>Eine Anpassung von <a href = "https://beckmw.wordpress.com/">Vorheriger Code</a></strong>, Tangle stellt Farben und Gewichtungen von horizontalen n Linien zwischen n vertikalen Zeitpunkten basierend auf der Gesamtänderung dar.</p>
+											<ul class="actions">
+														<li><a href="https://github.com/chasenunez/tangleplot" class="button special">Herunterladen</a></li>
+														<li><a href="images/tangleplotBig.png" class="button">Beispiel</a></li>
+													</ul>
+													
+											</span>
+</section>		
+
+
+<section>
+								<footer id="footer">
+								<br><br>
+						<center><p class="copyright">&copy; Chase N&uacute;ñez <script>document.write(new Date().getFullYear())</script>.</p></center>
+					</footer>
+					</section>
+						</div>
+					</div>
+			</div>
+			
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<!--<script type="text/javascript">
+$(document).ready(function(){   
+ setTimeout(function () {
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+    }, 3000)
+});
+</script>-->
+	</body>
+</html>

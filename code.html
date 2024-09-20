@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Chase N&uacute;ñez | Code</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name = "description" content="Packages, functions, and other coding resources" />
+		<meta name="google-site-verification" content="q-_1OMVCsNpxU5P-btt7UpZaR9qBzLcHQufFkDRMaY8" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/target.png">
+	</head>
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F6Y0C89R9E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F6Y0C89R9E');
+</script>
+
+	<body>
+
+		<!-- Wrapper style="width:250px "  -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Chase N&uacute;ñez</strong> PhD</a>
+									<ul class="icons">
+										<li><a href = "index.html"><span class="label">About</span></a></li>
+										<li><a href = "researchfull.html"><span class="label">Research</span></a></li>
+										<li><b><a href = "code.html"><span class="label"><strong><font color = "#dfaf37">Data & Code</font></strong></span></a></b></li>
+										<li><a href = "media.html"><span class="label">Media</span></a></li>
+										<li><p style="font-size:10px;">[ <strong><font color="#dfaf37">EN </strong></font>/ <a href="codeDE.html">DE</a> ]</p></li>
+										<!--<li><a href = "teaching.html"><span class="label">Teaching</span></a></li>
+										<li><a href = "outreach.html"><span class="label">Outreach</span></a></li>-->
+									</ul>
+								</header>
+<!-- -->								
+								<section>
+							<h2 id="content">Code</h2>
+								<div class="row">
+									<div class="4u 12u(medium)">
+										<ul class="image fit"><img src="images/ballistic.gif"/>
+										</ul>
+									</div>
+									<div class="8u 12u(medium)">
+										<h3><i><strong><font color = "#dfaf37">R Package:</strong></font></i>&nbsp Mast Inference and Forecasting (MASTIF)</h3>
+											<span><strong>MASTIF probabilistically estimates the seed production and dispersal of trees</strong> given seed trap data and tree locations. The model builds on the rich literature of seed dispersal models that employ a bivariate Student’s t (2Dt) by accommodating for uncertainty in seed assignment, modeling maturition status for unknown trees, and explicitly describing the space-time covariance structure of seed production between trees. Our publication outlining the model and the theory behind it can be found <a href="docs/EM2019maintext.pdf">here</a>, and supplementary material can be found <a href="docs/EM2019supplement.pdf">here</a>. 
+													<div class="row">
+														<div class="8u 12u$(medium)">
+															<br> After downloading <a href="https://github.com/jimclarkatduke/mastif/blob/master/mastif_1.0.tar.gz"><b>here</b></a>, install it by calling the following in R:
+																<pre>
+																	<code>
+install.packages('mastif_1.0.tar.gz',repos=NULL, type='source')
+library('mastif')
+
+																	</code>
+																</pre>
+														</div>
+														<div class="4u$ 12u$(medium)">
+															<br>Help and documentation here:
+																<pre>
+																	<code>
+help('mastif')
+browseVignettes('mastif')
+
+																	</code>
+																</pre>
+														</div>
+															<br> 
+													</div>
+											</span>			
+									</div>	
+								</div>
+								</section>
+<!-- -->								
+								<section>						
+									<div class="row">
+										<div class="4u 12u(medium)">
+											<ul class="image fit"><img src="images/articles/python.jpg"/>
+											</ul>
+										</div>
+										<div class="8u 12u(medium)">
+										<h3><i><strong><font color = "#dfaf37">Python Package:</strong></font></i>&nbsp geeDataExtract</h3>
+											<span> The python package <strong>geeDataExtract </strong>exploits the command line and Google Earth Engine's vast Environmental Covariate database to pull down a wide variety of data over space and time. You can use this package with the workflow below (<i>Pull Google Earth Engine Environmental Covariates for points without ArcGIS</i>) <br> Download package <a href="https://github.com/ASchwantes/geedataextract">here</a>. 
+												<div class="row">
+													<div class="12u 12u$(medium)">
+														<br>Python Package Citation:
+															<pre>
+																<code>
+Schwantes, Amanda M., N&uacute;ñez, Chase L. (2019). geeDataExtract. Python package version 0.0.1.
+																</code>
+															</pre>
+													</div>
+											<br> 
+											</span>
+										</div>
+									</div>
+								</section>
+<!-- -->								
+							<section>																		
+								<div class="row">
+									<div class="4u 12u(medium)">
+										<ul class="image fit"><img src="images/gee.gif"/></ul>
+									</div>
+									<div class="8u 12u(medium)">
+										<h3><strong><font color = "#dfaf37">Workflow: </strong></font>Pull Google Earth Engine Environmental Covariates for points (without ArcGIS)</h3>
+											<span><strong>Google Earth Engine offers a tremendous open resource to environmental scientists</strong> but requires a bit of coding, and often at least a few hours in (the very expensive) ArcGIS. Here is a way to skip Arc all together, taking you from start to download using only R, the command line, and an internet browser.</p>
+												<ul class="actions">
+													<li><a href="gee.html" class="button">Workflow</a></li>
+												</ul>
+											</span>	
+									</div>
+								</div>
+							</section>
+<!-- -->				
+	
+								<section>
+									<div class="row">
+										<div class="4u 12u(medium)">
+											<ul class="image fit"><img src="images/ants.gif"/></ul>
+										</div>
+										<div class="8u 12u(medium)">
+											<h3><i><strong><font color = "#dfaf37">R Package:</strong></font></i>&nbsp Generalized Joint Attribute Model (GJAM)</h3>
+											<span><strong>GJAM was developed to resolve some of the main challenges for ecological forecasting with biodiversity data.</strong> i) data are multivariate, ii) they are observed on different scales, and iii) they are mostly zeros. Probabilistic inference in GJAM admits data with disparate scales and massive zero inflation. That is, data are often collected in different ways, and species observations are a rare occurrence. By avoiding the distortion of scales implemented in generalized linear models, GJAM estimates can be interpreted on the scale of the observations, accounting for sample effort. Explanation of model structure can be found <a href = "gjam.html"><b>here.</b></a> Original manuscript can be found <a href = "docs/clarketal2016.pdf"><b>here.</b></a>
+												<div class="row">
+													<div class="6u 12u$(medium)">
+														<br> Install it by calling the following in R:
+															<pre>
+																<code>
+install.packages('gjam')
+library('gjam')
+
+																</code>
+															</pre>
+													</div>
+													<div class="6u$ 12u$(medium)">
+												<br> Get help and documentation by calling the following in R:
+														<pre>
+															<code>
+help('gjam')
+browseVignettes('gjam')
+
+															</code>
+														</pre>
+													</div>
+											<br> 
+											</span>
+										</div>
+								</div>
+							</section>
+
+<!-- -->
+<section>							
+	<div class="row">
+		<div class="4u 12u(medium)">
+			<ul class="image fit"><img src="images/media/pic04.jpg"/></ul>
+		</div>
+		<div class="8u 12u(medium)">
+		<h3><strong><font color = "#dfaf37">Workflow: </strong></font>Fitting Model of Wild Elephant Gut Passage Time and Seed Dispersal Distances</h3>
+				<span><strong>Accurate estimation of gut passage time, from ingestion to defecation, is essential for understanding vertebrate-mediated ecological processes, such as seed dispersal.</strong> Here is a workflow fitting a model of gut passage time and applying it spatially to infer seed dispersal density.</p>
+											<ul class="actions">
+														<li><a href="elephant.methods.html" class="button">Workflow</a></li>
+													</ul>
+													
+											</span>
+</section>							
+<!-- -->						
+<section>							
+	<div class="row">
+		<div class="4u 12u(medium)">
+			<ul class="image fit"><img src="images/arrowplot.png"/></ul>
+		</div>
+		<div class="8u 12u(medium)">
+		<h3><i><strong><font color = "#dfaf37">Function:</strong></font></i> Arrow Plots</h3>
+				<span><strong>For displaying ordered mean difference among multiple groups.</strong> In this example, I am plotting the mean difference in probability of presence for tree species in the country of Gabon.</p>
+											<ul class="actions">
+														<li><a href="https://github.com/chasenunez/arrowplot" class="button special">Download</a></li>
+														<li><a href="images/arrowplotBig.png" class="button">Example</a></li>
+													</ul>
+													
+											</span>
+</section>
+<!-- -->
+<section>							
+	<div class="row">
+		<div class="4u 12u(medium)">
+			<ul class="image fit"><img src="images/tangle.png"/></ul>
+		</div>
+		<div class="8u 12u(medium)">
+		<h3><strong><font color = "#dfaf37">Function: </strong></font>Tangle Plots</h3>
+										
+											<span><strong>Plotting change in relative rank over time.</strong> An adaptation of <a href = "https://beckmw.wordpress.com/">previous code</a>, Tangle plots colors and weights horizontal n lines between n vertical timepoints based on the total change.</p>
+											<ul class="actions">
+														<li><a href="https://github.com/chasenunez/tangleplot" class="button special">Download</a></li>
+														<li><a href="images/tangleplotBig.png" class="button">Example</a></li>
+													</ul>
+													
+											</span>
+		</section>
+								
+        <section>
+								<h2 id="content">Data</h2>
+										<div class="row">
+											<div class="4u 12u$(medium)">
+											    <div class="box">
+												<h3><a href = "https://datadryad.org/stash/dataset/doi:10.5061/dryad.p5hqbzkqf">Ecological and social pressures interfere with homeostatic sleep regulation in the wild;</a></h3>
+												<p>Loftus JC, Harel R, N&uacute;ñez CL, Crofoot MC;</p>
+												<p>DOI: 10.5061/dryad.p5hqbzkqf;</p>
+												<p>DYRAD</p>
+												</div>
+
+											</div>
+											<div class="4u$ 12u$(medium)">
+											    <div class="box">
+												<h3><a href = "https://datadryad.org/stash/dataset/doi:10.5061/dryad.7h44j0zsr">Ecological factors influence balancing selection on leaf chemical profiles of a wildflower;</a></h3>
+												<p>Carley LN, ..., N&uacute;ñez CL, et al.;</p>
+												<p>DOI: 10.5061/dryad.7h44j0zsr;</p>
+												<p>DYRAD</p>
+												</div>
+											</div>
+											<div class="4u 12u$(medium)">
+											    <div class="box">
+												<h3><a href = "https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA659863">Boechera stricta raw sequence reads of CFR;</a></h3>
+												<p>Carley LN, ..., N&uacute;ñez CL, et al.;</p>
+												<p>Accession: PRJNA659863</p>
+												<p>ID: 659863</p>
+												<p>NCBI</p>
+												</div>
+											</div>
+											<div class="4u 12u$(medium)">
+											    <div class="box">
+												<h3><a href = "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA609209/">Boechera stricta long-read genome assembly;</a></h3>
+												<p>Carley LN, ..., N&uacute;ñez CL, et al.;</p>
+												<p>Accession: PRJNA609209</p>
+												<p>ID: 609209</p>
+												<p>NCBI</p>
+												</div>
+											</div>
+											    <div class="4u 12u$(medium)">
+											    <div class="box">
+												<h3><a href = "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA609209/">Continent-wide tree fecundity driven by indirect climate effects;</a></h3>
+												<p>B Courbaud, ..., N&uacute;ñez CL, et al.;</p>
+												<p>CRID: 1360861294726010368</p>
+												<p>DOI: 10.7924/r4348ph5t</p>
+												<p>Research Data Repository, Duke University</p>
+												</div>
+											</div>
+										</div>
+</section>		
+
+
+<section>
+								<footer id="footer">
+								<br><br>
+						<center><p class="copyright">&copy; Chase N&uacute;ñez <script>document.write(new Date().getFullYear())</script>.</p></center>
+					</footer>
+					</section>
+						</div>
+					</div>
+			</div>
+			
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<!--<script type="text/javascript">
+$(document).ready(function(){   
+ setTimeout(function () {
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+    }, 3000)
+});
+</script>-->
+	</body>
+</html>
